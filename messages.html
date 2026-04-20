@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages - Personal Endeavor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="./assets/website-logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="chat-page">
+    <section class="chat-shell">
+      <header class="chat-header">
+        <div class="chat-title-wrap">
+          <a class="chat-back" href="./index.html" aria-label="Back to home">&#8592;</a>
+          <div>
+            <h1>Messages</h1>
+            <p>Private chat</p>
+          </div>
+        </div>
+        <div class="chat-target">
+          <label for="chatUserSelect">Send to</label>
+          <select id="chatUserSelect" aria-label="Select chat user"></select>
+        </div>
+      </header>
+
+      <section id="chatList" class="chat-list" aria-live="polite"></section>
+
+      <form id="chatForm" class="chat-composer">
+        <div id="chatPhotoPreview" class="chat-photo-preview hidden">
+          <img id="chatPhotoPreviewImg" alt="Selected photo preview">
+          <button id="chatRemovePhotoBtn" type="button" aria-label="Remove selected photo">&times;</button>
+        </div>
+        <textarea id="chatInput" placeholder="Write a message..." rows="2"></textarea>
+        <div class="chat-actions">
+          <label for="chatPhotoInput" class="chat-photo-btn">Photo</label>
+          <input id="chatPhotoInput" type="file" accept="image/*" class="hidden">
+          <button id="chatSendBtn" type="submit">Send</button>
+        </div>
+      </form>
+
+      <p id="chatMessage" class="message" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="realtime-config.js"></script>
+  <script src="realtime.js"></script>
+  <script src="messages.js"></script>
+</body>
+</html>

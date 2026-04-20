@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaderboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="auth-shell" style="grid-template-columns: 1fr;">
+        <div class="auth-panel">
+          <h2>Leaderboard</h2>
+          <p class="form-subtitle">Top 100 users by points.</p>
+
+          <div class="wallet-stats" style="margin-top: 14px;">
+            <div class="wallet-stat">
+              <span class="wallet-label">Auto update</span>
+              <span id="lbTimer" class="wallet-value">5m</span>
+            </div>
+          </div>
+
+          <div id="lbList" class="lb-list" style="margin-top: 14px;"></div>
+
+          <a class="ghost-btn" href="./index.html" style="display: inline-block; width: 100%; text-align: center; text-decoration: none;">Back</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="wallet.js"></script>
+    <script src="leaderboard.js"></script>
+  </body>
+</html>

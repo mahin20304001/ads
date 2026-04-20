@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="auth-shell" style="grid-template-columns: 1fr;">
+        <div class="auth-panel">
+          <h2>Tap the Dot</h2>
+          <p class="form-subtitle">Tap the moving dot as many times as you can in 20 seconds.</p>
+
+          <div class="wallet-stats" style="margin-top: 14px;">
+            <div class="wallet-stat">
+              <span class="wallet-label">Time</span>
+              <span id="gameTime" class="wallet-value">20s</span>
+            </div>
+            <div class="wallet-stat">
+              <span class="wallet-label">Score</span>
+              <span id="gameScore" class="wallet-value">0</span>
+            </div>
+            <div class="wallet-stat">
+              <span class="wallet-label">Best</span>
+              <span id="gameBest" class="wallet-value">0</span>
+            </div>
+          </div>
+
+          <div
+            id="gameArena"
+            class="wallet-card"
+            style="margin-top: 14px; height: 280px; position: relative; overflow: hidden;"
+            aria-label="Game arena"
+          >
+            <button
+              id="dot"
+              type="button"
+              aria-label="Tap dot"
+              style="
+                position: absolute;
+                width: 44px;
+                height: 44px;
+                border-radius: 999px;
+                border: 2px solid rgba(255, 255, 255, 0.35);
+                background: radial-gradient(circle at 30% 30%, #93c5fd, #6366f1);
+                box-shadow: 0 14px 30px rgba(99, 102, 241, 0.35);
+                cursor: pointer;
+              "
+            ></button>
+          </div>
+
+          <div class="wallet-actions" style="margin-top: 14px;">
+            <button id="startGameBtn" class="primary-btn" type="button">Start</button>
+            <button id="resetGameBtn" class="ghost-btn" type="button">Reset Best</button>
+          </div>
+
+          <p id="gameMsg" class="message" role="status" aria-live="polite"></p>
+
+          <a class="ghost-btn" href="./index.html" style="display: inline-block; width: 100%; text-align: center; text-decoration: none;">Back</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>

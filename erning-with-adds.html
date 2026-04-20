@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erning with adds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="auth-shell" style="grid-template-columns: 1fr;">
+        <div class="auth-panel">
+          <h2>Erning with adds</h2>
+          <p class="form-subtitle">Click and earn 1 point each time.</p>
+
+          <div class="wallet-stats" style="margin-top: 14px;">
+            <div class="wallet-stat">
+              <span class="wallet-label">Your Points</span>
+              <span id="earnPoints" class="wallet-value">0</span>
+            </div>
+            <div class="wallet-stat">
+              <span class="wallet-label">Next Link</span>
+              <span id="earnNext" class="wallet-value">1/20</span>
+            </div>
+          </div>
+
+          <button id="earnBtn" class="primary-btn" type="button">Click to Earn</button>
+
+          <a class="ghost-btn" href="./task.html" style="display: inline-block; width: 100%; text-align: center; text-decoration: none;">Back</a>
+        </div>
+      </section>
+    </main>
+    <script src="wallet.js"></script>
+    <script src="earn.js"></script>
+  </body>
+</html>

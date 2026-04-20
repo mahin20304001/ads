@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Endeavor - Sign Up & Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="./assets/website-logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section id="authShell" class="auth-shell">
+      <div class="brand-panel">
+        <div class="brand-top">
+          <div class="logo" aria-hidden="true">
+            <img class="logo-image" src="./assets/website-logo.png" alt="Personal Endeavor logo">
+          </div>
+          <div class="brand-text">
+            <p class="badge">Personal Endeavor</p>
+            <h1 class="brand-title">Personal Endeavor</h1>
+            <p class="brand-tag">Work in Style</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-panel">
+        <div class="tab-controls">
+          <button class="tab-button active" data-tab="signup" type="button">Sign Up</button>
+          <button class="tab-button" data-tab="login" type="button">Login</button>
+        </div>
+
+        <form id="signupForm" class="auth-form active" novalidate>
+          <h2>Create Account</h2>
+          <p class="form-subtitle">Please fill in your details.</p>
+
+          <label for="signupName">Full Name</label>
+          <input id="signupName" name="name" type="text" placeholder="Enter your full name" required>
+
+          <label for="signupEmail">Email</label>
+          <input id="signupEmail" name="email" type="email" placeholder="you@example.com" required>
+
+          <label for="signupPassword">Password</label>
+          <input id="signupPassword" name="password" type="password" placeholder="Minimum 6 characters" required>
+
+          <label for="signupConfirmPassword">Confirm Password</label>
+          <input id="signupConfirmPassword" name="confirmPassword" type="password" placeholder="Retype your password" required>
+
+          <button class="primary-btn" type="submit">Create Account</button>
+          <button id="supportToggleBtn" class="support-btn" type="button">Support</button>
+          <div id="supportInfo" class="support-info hidden">
+            <p class="support-topline">
+              <span>Admin: Md Mahin</span>
+              <a class="support-link" href="https://t.me/NT348819" target="_blank" rel="noopener noreferrer">Telegram Support</a>
+            </p>
+            <p>
+              <a class="support-link" href="https://www.facebook.com/profile.php?id=100052987717192" target="_blank" rel="noopener noreferrer">Facebook</a>
+            </p>
+          </div>
+        </form>
+
+        <form id="loginForm" class="auth-form" novalidate>
+          <h2>Welcome Back</h2>
+          <p class="form-subtitle">Login with your account credentials.</p>
+
+          <label for="loginEmail">Email</label>
+          <input id="loginEmail" name="email" type="email" placeholder="you@example.com" required>
+
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" name="password" type="password" placeholder="Enter your password" required>
+
+          <button class="primary-btn" type="submit">Login</button>
+        </form>
+
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="feedShell" class="feed-shell hidden">
+      <header class="feed-topbar">
+        <div class="feed-brand">
+          <div class="feed-logo"></div>
+          <span>Personal Endeavor</span>
+        </div>
+        <div class="top-quick-actions">
+          <button id="addVideoBtn" class="quick-btn" type="button" aria-label="Add">+</button>
+          <input id="topSearchInput" class="top-search-input" type="text" placeholder="Search posts/users">
+          <button id="topSearchBtn" class="quick-btn" type="button" aria-label="Search">&#9906;</button>
+          <button id="menuToggleBtn" class="quick-btn" type="button" aria-label="Menu" aria-expanded="false">&#9776;</button>
+        </div>
+      </header>
+      <div id="accountMenu" class="account-menu hidden">
+        <button id="menuMyAccount" type="button">My Account</button>
+        <button id="menuWallet" type="button">Wallet</button>
+        <button id="menuExportData" type="button">Export Data</button>
+        <button id="menuImportData" type="button">Import Data</button>
+        <button id="menuAddAccount" type="button">Add Account</button>
+        <button id="menuLogout" type="button">Logout</button>
+      </div>
+      <input id="importDataInput" type="file" accept="application/json" class="hidden">
+      <section id="myAccountPanel" class="my-account-panel hidden">
+        <div class="account-cover-wrap">
+          <img id="coverPreview" class="account-cover" alt="Cover photo preview">
+          <label class="upload-btn">
+            Change Cover
+            <input id="coverInput" type="file" accept="image/*">
+          </label>
+        </div>
+        <div class="account-body">
+          <img id="profilePreview" class="account-avatar" alt="Profile photo preview">
+          <label class="upload-btn avatar-upload">
+            Change Profile
+            <input id="profileInput" type="file" accept="image/*">
+          </label>
+          <h3 id="accountName"></h3>
+          <p id="accountEmail"></p>
+        </div>
+      </section>
+      <section id="walletPanel" class="wallet-panel hidden">
+        <div class="wallet-body">
+          <h3>Wallet</h3>
+          <p class="wallet-meta">Earn points by clicking ads.</p>
+          <div class="wallet-stats">
+            <div class="wallet-stat">
+              <span class="wallet-label">Total Points</span>
+              <span id="walletPoints" class="wallet-value">0</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <nav class="icon-nav">
+        <button id="navHomeBtn" class="nav-icon active" type="button" aria-label="Home"><span class="nav-logo">&#8962;</span></button>
+        <button id="navFriendsBtn" class="nav-icon" type="button" aria-label="Friends"><span class="nav-logo">&#128101;</span></button>
+        <button id="navMessagesBtn" class="nav-icon" type="button" aria-label="Message"><span class="nav-logo">&#9993;</span></button>
+        <button id="navVideoBtn" class="nav-icon" type="button" aria-label="Video"><span class="nav-logo">&#9654;</span></button>
+        <button id="navNotificationBtn" class="nav-icon" type="button" aria-label="Notification">
+          <span class="nav-logo nav-logo-with-badge">
+            &#128276;
+            <span id="notificationBadge" class="notification-badge hidden">0</span>
+          </span>
+        </button>
+        <button id="navMarketplaceBtn" class="nav-icon" type="button" aria-label="Marketplace"><span class="nav-logo market-nav-logo"></span></button>
+      </nav>
+
+      <section id="friendsPanel" class="friends-panel hidden">
+        <div class="wallet-body">
+          <h3>Friends</h3>
+          <p class="wallet-meta">Send friend request and manage requests.</p>
+
+          <div class="wallet-stats">
+            <div class="wallet-stat">
+              <span class="wallet-label">All Users</span>
+              <span id="friendsUsersCount" class="wallet-value">0</span>
+            </div>
+            <div class="wallet-stat">
+              <span class="wallet-label">Requests</span>
+              <span id="friendsReqCount" class="wallet-value">0</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 14px;">
+            <div id="friendsReqList"></div>
+          </div>
+
+          <div style="margin-top: 14px;">
+            <div id="friendsUsersList"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="videoUploadPanel" class="friends-panel hidden">
+        <div class="wallet-body">
+          <h3>Upload Video</h3>
+          <p class="wallet-meta">Upload short videos like reels.</p>
+          <div class="video-upload-card">
+            <label class="upload-btn" for="videoInput">Choose Video</label>
+            <input id="videoInput" type="file" accept="video/*" class="hidden">
+            <p id="videoFileName" class="post-meta" style="margin-top: 10px;">No video selected.</p>
+            <button id="uploadVideoBtn" class="primary-btn" type="button">Upload</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="videoReelsPanel" class="video-reels-panel hidden">
+        <div id="videoReelsList" class="video-reels-list"></div>
+      </section>
+
+      <section id="notificationsPanel" class="friends-panel hidden">
+        <div class="wallet-body">
+          <h3>Notifications</h3>
+          <p class="wallet-meta">Friend requests and messages.</p>
+          <div id="notificationsList"></div>
+        </div>
+      </section>
+
+      <div class="composer-card">
+        <div class="avatar-circle">P</div>
+        <div class="composer-field">
+          <textarea id="postText" class="composer-textarea" rows="1" placeholder="What's on your mind?"></textarea>
+          <div id="photoPreviewWrap" class="photo-preview hidden">
+            <img id="photoPreviewImg" alt="Selected photo preview">
+            <button id="removePhotoBtn" class="remove-photo" type="button" aria-label="Remove photo">×</button>
+          </div>
+        </div>
+        <div class="composer-actions">
+          <label class="photo-btn" for="postPhotoInput">Photo</label>
+          <input id="postPhotoInput" type="file" accept="image/*" class="hidden">
+          <button id="postBtn" class="post-btn" type="button">Post</button>
+        </div>
+      </div>
+      <p id="feedMsg" class="message" role="status" aria-live="polite" style="margin: 10px 12px 0;"></p>
+
+      <section class="stories-row">
+        <a class="story-card add-story" href="./games.html">
+          <div class="story-photo"></div>
+          <p>Play game</p>
+        </a>
+        <a id="taskCard" class="story-card" href="./task.html">
+          <div class="story-photo story-blue"></div>
+          <p>Task</p>
+        </a>
+        <article class="story-card">
+          <div class="story-photo story-purple"></div>
+          <p>New work</p>
+        </article>
+        <a class="story-card" href="./leaderboard.html">
+          <div class="story-photo story-green"></div>
+          <p>Leaderboard</p>
+        </a>
+      </section>
+
+      <div class="feed-layout">
+        <section class="news-feed">
+          <div class="post-card" style="padding: 12px;">
+            <p id="postsCount" class="post-meta" style="margin: 0;">Posts: 0</p>
+          </div>
+          <div id="postsList"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="wallet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

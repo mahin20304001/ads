@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puzzle Solve</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="auth-shell" style="grid-template-columns: 1fr;">
+        <div class="auth-panel">
+          <h2>Puzzle Solve</h2>
+          <p class="form-subtitle">Guess the number (1-100). You have 10 tries.</p>
+
+          <div class="wallet-stats" style="margin-top: 14px;">
+            <div class="wallet-stat">
+              <span class="wallet-label">Tries Left</span>
+              <span id="pzTries" class="wallet-value">10</span>
+            </div>
+            <div class="wallet-stat">
+              <span class="wallet-label">Status</span>
+              <span id="pzStatus" class="wallet-value">Ready</span>
+            </div>
+          </div>
+
+          <form id="pzForm" style="margin-top: 14px;" novalidate>
+            <label for="pzGuess">Your Guess</label>
+            <input id="pzGuess" name="guess" type="number" min="1" max="100" placeholder="1 - 100" required />
+            <button class="primary-btn" type="submit">Try</button>
+          </form>
+
+          <div class="wallet-actions" style="margin-top: 10px;">
+            <button id="pzNew" class="ghost-btn" type="button">New Puzzle</button>
+            <a class="primary-btn" href="./games.html" style="display: inline-block; width: 100%; text-align: center; text-decoration: none;">Back</a>
+          </div>
+
+          <p id="pzMsg" class="message" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="puzzle-solve.js"></script>
+  </body>
+</html>

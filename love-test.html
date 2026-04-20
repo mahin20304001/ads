@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="auth-shell" style="grid-template-columns: 1fr;">
+        <div class="auth-panel">
+          <h2>Love Test</h2>
+          <p class="form-subtitle">Enter two names to get a match score.</p>
+
+          <form id="loveForm" novalidate>
+            <label for="nameA">Name 1</label>
+            <input id="nameA" name="a" type="text" placeholder="Your name" required />
+
+            <label for="nameB">Name 2</label>
+            <input id="nameB" name="b" type="text" placeholder="Partner name" required />
+
+            <button class="primary-btn" type="submit">Check</button>
+          </form>
+
+          <div class="wallet-stats" style="margin-top: 14px;">
+            <div class="wallet-stat">
+              <span class="wallet-label">Match</span>
+              <span id="loveScore" class="wallet-value">--%</span>
+            </div>
+          </div>
+
+          <p id="loveMsg" class="message" role="status" aria-live="polite"></p>
+
+          <a class="ghost-btn" href="./games.html" style="display: inline-block; width: 100%; text-align: center; text-decoration: none;">Back</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="love-test.js"></script>
+  </body>
+</html>

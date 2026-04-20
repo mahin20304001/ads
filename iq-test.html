@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IQ Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="auth-shell" style="grid-template-columns: 1fr;">
+        <div class="auth-panel">
+          <h2>IQ Test</h2>
+          <p class="form-subtitle">5 quick questions.</p>
+
+          <div class="wallet-stats" style="margin-top: 14px;">
+            <div class="wallet-stat">
+              <span class="wallet-label">Question</span>
+              <span id="iqStep" class="wallet-value">1/5</span>
+            </div>
+            <div class="wallet-stat">
+              <span class="wallet-label">Score</span>
+              <span id="iqScore" class="wallet-value">0</span>
+            </div>
+          </div>
+
+          <div id="iqCard" class="wallet-card" style="margin-top: 14px;">
+            <div id="iqQ" class="lb-name" style="white-space: normal;"></div>
+            <div id="iqOpts" style="display: grid; gap: 10px; margin-top: 12px;"></div>
+          </div>
+
+          <p id="iqMsg" class="message" role="status" aria-live="polite"></p>
+
+          <div class="wallet-actions" style="margin-top: 10px;">
+            <button id="iqRestart" class="ghost-btn" type="button">Restart</button>
+            <a class="primary-btn" href="./games.html" style="display: inline-block; width: 100%; text-align: center; text-decoration: none;">Back</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="iq-test.js"></script>
+  </body>
+</html>

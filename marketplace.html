@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketplace - Personal Endeavor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="./assets/website-logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="market-page">
+    <section class="market-shell">
+      <header class="market-header">
+        <a class="chat-back" href="./index.html" aria-label="Back to feed">&#8592;</a>
+        <div class="market-header-logo" aria-hidden="true"></div>
+        <div>
+          <h1>Marketplace</h1>
+          <p>Upload products with license key</p>
+        </div>
+      </header>
+
+      <section class="market-upload-card">
+        <h2>Create Product Post</h2>
+        <form id="marketForm" novalidate>
+          <label for="marketTitle">Product Title</label>
+          <input id="marketTitle" type="text" placeholder="Write product title" required>
+
+          <label for="marketPrice">Price</label>
+          <input id="marketPrice" type="text" placeholder="e.g. 1200 BDT" required>
+
+          <label for="marketDetails">Details</label>
+          <textarea id="marketDetails" rows="4" placeholder="Product details" required></textarea>
+
+          <label class="upload-btn" for="marketImageInput">Choose Product Image</label>
+          <input id="marketImageInput" type="file" accept="image/*" class="hidden">
+          <div id="marketImagePreviewWrap" class="photo-preview hidden" style="margin-top: 10px;">
+            <img id="marketImagePreview" alt="Product image preview">
+          </div>
+
+          <label for="marketLicenseKey">License Key</label>
+          <input id="marketLicenseKey" type="password" placeholder="Enter license key to publish" required>
+
+          <button class="primary-btn" type="submit">Post to Marketplace</button>
+          <p id="marketMsg" class="message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="market-list-card">
+        <h2>Marketplace Products</h2>
+        <div id="marketList"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="marketplace.js"></script>
+</body>
+</html>
